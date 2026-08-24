@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Dataset Doctor - examples\data\healthy_customers.csv</title>
+<style>
+:root { --bg:#f6f8fa; --card:#ffffff; --text:#1f2328; --muted:#656d76;
+        --critical:#cf222e; --warning:#bc4c00; --notice:#9a6700; --ok:#1a7f37;
+        --border:#d0d7de; }
+* { box-sizing:border-box; }
+body { margin:0; padding:2rem; background:var(--bg); color:var(--text);
+       font:15px/1.5 system-ui,-apple-system,'Segoe UI',sans-serif; }
+main { max-width:1080px; margin:0 auto; }
+h1 { font-size:1.6rem; margin:0 0 .25rem; }
+.meta { color:var(--muted); font-size:.85rem; margin-bottom:1.5rem; }
+.card { background:var(--card); border:1px solid var(--border);
+        border-radius:10px; padding:1.25rem 1.5rem; margin-bottom:1.25rem; }
+.score-row { display:flex; align-items:center; gap:1.25rem; }
+.score { font-size:3rem; font-weight:700; }
+.grade { padding:.2rem .75rem; border-radius:999px; color:#fff;
+         font-weight:600; font-size:.85rem; }
+.grid { display:flex; flex-wrap:wrap; gap:.5rem 2rem; }
+.stat b { display:block; font-size:1.05rem; }
+.stat span { color:var(--muted); font-size:.8rem; }
+table { border-collapse:collapse; width:100%; margin-top:.5rem; }
+th, td { text-align:left; padding:.4rem .6rem; border-bottom:1px solid var(--border); }
+th { color:var(--muted); font-weight:600; font-size:.85rem; }
+.finding { border-left:4px solid var(--border); padding:.35rem 0 .35rem .85rem;
+           margin:.6rem 0; }
+.finding.critical { border-color:var(--critical); }
+.finding.warning { border-color:var(--warning); }
+.finding.notice { border-color:var(--notice); }
+.badge { font-size:.72rem; font-weight:700; letter-spacing:.05em; }
+.sev-critical { color:var(--critical); } .sev-warning { color:var(--warning); }
+.sev-notice { color:var(--notice); }
+.col-name { font-weight:600; }
+.evidence, .fix { color:var(--muted); font-size:.88rem; }
+.fix::before { content:'Fix: '; color:var(--ok); font-weight:600; }
+.checks li { list-style:none; padding:.15rem 0; }
+.checks ul { padding-left:0; margin:.4rem 0 0; }
+.pass { color:var(--ok); } .fail { color:var(--critical); }
+footer { color:var(--muted); font-size:.8rem; margin-top:1.5rem; }
+</style></head><body><main>
+<h1>Dataset Doctor</h1>
+<p class='meta'>Source: <code>examples\data\healthy_customers.csv</code> &middot; format: csv</p>
+<div class='card'><div class='score-row'><div class='score'>96<span style='font-size:1.4rem;color:#656d76'>/100</span></div><div><span class='grade' style='background:#1a7f37'>GOOD</span><p style='margin:.4rem 0 0;color:#656d76;font-size:.9rem'>Deterministic score: severity points per finding, capped per category.</p></div></div></div>
+<div class='card'><div class='grid'><div class='stat'><b>600</b><span>Rows</span></div><div class='stat'><b>8</b><span>Columns</span></div><div class='stat'><b>38.2 KB</b><span>File size</span></div><div class='stat'><b>0.0% (0)</b><span>Duplicate rows</span></div><div class='stat'><b>0.0%</b><span>Null cells</span></div></div></div>
+<div class='card'><b>Deductions by category</b><table><tr><th>Category</th><th>Deduction</th><th>Raw points</th><th>Cap</th><th>Findings</th></tr><tr><td>Outliers &amp; distribution</td><td>-4</td><td>4</td><td>20</td><td>1</td></tr></table></div>
+<div class='card checks'><b>Checks</b><ul><li><span class='pass'>&#10003;</span> Schema consistency: <b>GOOD</b></li><li><span class='pass'>&#10003;</span> Constant columns: <b>NONE</b></li><li><span class='pass'>&#10003;</span> Duplicate rows: <b>NONE</b></li><li><span class='pass'>&#10003;</span> Missing values: <b>OK</b></li></ul></div>
+<div class='card'><b>Issues found (1)</b><div class='finding warning'><span class='badge sev-warning'>WARNING</span> &middot; distribution &middot; confidence 75%<div><span class='col-name'>monthly_spend</span> → &#x27;monthly_spend&#x27; contains 8 values outside the IQR-based expected range [11.4513, 89.5812]</div><div class='evidence'>Fences are Q1 - 1.5xIQR and Q3 + 1.5xIQR; 1.33% of 600 non-null values fall outside them.</div><div class='fix'>Inspect the flagged values: they may be data-entry errors or genuine tail events. Consider robust scaling or capping.</div></div></div>
+<div class='card'><b>Column profiles</b><table><tr><th>Column</th><th>Type</th><th>Semantic</th><th>Null %</th><th>Unique %</th><th>Min</th><th>Max</th><th>Mean</th><th>Std</th></tr><tr><td>customer_id</td><td>Int64</td><td>numeric</td><td>0.0%</td><td>100.0%</td><td>1,000</td><td>1,599</td><td>1299.5</td><td>173.34935823359717</td></tr><tr><td>name</td><td>String</td><td>text</td><td>0.0%</td><td>66.2%</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>email</td><td>String</td><td>text</td><td>0.0%</td><td>86.7%</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>age</td><td>Int64</td><td>numeric</td><td>0.0%</td><td>7.2%</td><td>22</td><td>69</td><td>39.221666666666664</td><td>8.070176172880268</td></tr><tr><td>city</td><td>String</td><td>categorical</td><td>0.0%</td><td>0.8%</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>signup_date</td><td>Date</td><td>datetime</td><td>0.0%</td><td>100.0%</td><td>2022-01-01</td><td>2023-08-23</td><td>-</td><td>-</td></tr><tr><td>is_active</td><td>Boolean</td><td>boolean</td><td>0.0%</td><td>0.3%</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>monthly_spend</td><td>Float64</td><td>numeric</td><td>0.0%</td><td>94.5%</td><td>5.66</td><td>114.72</td><td>50.6122</td><td>14.672960930368037</td></tr></table></div>
+<footer>Generated 2026-08-24T21:35:54+00:00 by dataset-doctor v0.1.0. Score methodology: severity points capped per category.</footer>
+</main></body></html>

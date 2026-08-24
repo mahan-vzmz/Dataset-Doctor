@@ -1,0 +1,301 @@
+{
+  "tool": "dataset-doctor",
+  "version": "0.1.0",
+  "generated_at": "2026-08-24T21:35:58.085189Z",
+  "source_path": "examples\\data\\sensor_readings.parquet",
+  "health_score": {
+    "score": 77,
+    "grade": "FAIR",
+    "total_deduction": 23,
+    "deductions": [
+      {
+        "category": "distribution",
+        "label": "Outliers & distribution",
+        "points": 17,
+        "cap": 20,
+        "deduction": 17,
+        "finding_count": 5
+      },
+      {
+        "category": "cardinality",
+        "label": "Cardinality & constants",
+        "points": 4,
+        "cap": 10,
+        "deduction": 4,
+        "finding_count": 1
+      },
+      {
+        "category": "missingness",
+        "label": "Missing values",
+        "points": 1,
+        "cap": 35,
+        "deduction": 1,
+        "finding_count": 1
+      },
+      {
+        "category": "schema",
+        "label": "Schema & types",
+        "points": 1,
+        "cap": 20,
+        "deduction": 1,
+        "finding_count": 1
+      }
+    ]
+  },
+  "summary": {
+    "critical": 0,
+    "warning": 5,
+    "notice": 3
+  },
+  "dataset": {
+    "source_path": "examples\\data\\sensor_readings.parquet",
+    "resolved_path": "C:\\Users\\Victus 16\\Dataset-Doctor\\examples\\data\\sensor_readings.parquet",
+    "file_format": "parquet",
+    "file_size_bytes": 3452,
+    "row_count": 301,
+    "column_count": 5,
+    "duplicate_row_count": 1,
+    "duplicate_pct": 0.33222591362126247,
+    "total_null_count": 23,
+    "total_null_pct": 1.5282392026578073,
+    "columns": [
+      {
+        "name": "sensor_id",
+        "dtype": "String",
+        "semantic_type": "categorical",
+        "row_count": 301,
+        "null_count": 0,
+        "null_pct": 0.0,
+        "unique_count": 12,
+        "unique_pct": 3.9867109634551494,
+        "constant": false,
+        "min_value": null,
+        "max_value": null,
+        "mean_value": null,
+        "std_value": null,
+        "median_value": null,
+        "q1_value": null,
+        "q3_value": null,
+        "skewness": null,
+        "avg_length": null,
+        "most_frequent": [
+          {
+            "value": "S11",
+            "count": 26,
+            "pct": 8.637873754152823
+          },
+          {
+            "value": "S00",
+            "count": 25,
+            "pct": 8.305647840531561
+          },
+          {
+            "value": "S01",
+            "count": 25,
+            "pct": 8.305647840531561
+          },
+          {
+            "value": "S02",
+            "count": 25,
+            "pct": 8.305647840531561
+          },
+          {
+            "value": "S03",
+            "count": 25,
+            "pct": 8.305647840531561
+          }
+        ]
+      },
+      {
+        "name": "temperature_c",
+        "dtype": "Float64",
+        "semantic_type": "numeric",
+        "row_count": 301,
+        "null_count": 23,
+        "null_pct": 7.641196013289036,
+        "unique_count": 84,
+        "unique_pct": 30.215827338129497,
+        "constant": false,
+        "min_value": "15.8",
+        "max_value": "26.5",
+        "mean_value": 21.054676258992806,
+        "std_value": 1.9468283202511214,
+        "median_value": 21.1,
+        "q1_value": 19.7,
+        "q3_value": 22.2,
+        "skewness": 0.028230003376483268,
+        "avg_length": null,
+        "most_frequent": []
+      },
+      {
+        "name": "humidity_pct",
+        "dtype": "Float64",
+        "semantic_type": "numeric",
+        "row_count": 301,
+        "null_count": 0,
+        "null_pct": 0.0,
+        "unique_count": 183,
+        "unique_pct": 60.797342192691026,
+        "constant": false,
+        "min_value": "23.8",
+        "max_value": "67.5",
+        "mean_value": 44.87109634551495,
+        "std_value": 7.371100898826891,
+        "median_value": 45.3,
+        "q1_value": 39.9,
+        "q3_value": 49.9,
+        "skewness": -0.08590381248390412,
+        "avg_length": null,
+        "most_frequent": []
+      },
+      {
+        "name": "error_count",
+        "dtype": "Int64",
+        "semantic_type": "numeric",
+        "row_count": 301,
+        "null_count": 0,
+        "null_pct": 0.0,
+        "unique_count": 5,
+        "unique_pct": 1.6611295681063125,
+        "constant": false,
+        "min_value": "0",
+        "max_value": "4",
+        "mean_value": 0.4119601328903654,
+        "std_value": 1.031046302745573,
+        "median_value": 0.0,
+        "q1_value": 0.0,
+        "q3_value": 0.0,
+        "skewness": 2.4943154946769908,
+        "avg_length": null,
+        "most_frequent": []
+      },
+      {
+        "name": "reading_ts",
+        "dtype": "String",
+        "semantic_type": "categorical",
+        "row_count": 301,
+        "null_count": 0,
+        "null_pct": 0.0,
+        "unique_count": 1,
+        "unique_pct": 0.33222591362126247,
+        "constant": true,
+        "min_value": null,
+        "max_value": null,
+        "mean_value": null,
+        "std_value": null,
+        "median_value": null,
+        "q1_value": null,
+        "q3_value": null,
+        "skewness": null,
+        "avg_length": null,
+        "most_frequent": [
+          {
+            "value": "2025-01-01",
+            "count": 301,
+            "pct": 100.0
+          }
+        ]
+      }
+    ]
+  },
+  "findings": [
+    {
+      "severity": "warning",
+      "category": "distribution",
+      "column": "error_count",
+      "description": "'error_count' contains 51 values outside the IQR-based expected range [0, 0]",
+      "evidence": "Fences are Q1 - 1.5xIQR and Q3 + 1.5xIQR; 16.94% of 301 non-null values fall outside them.",
+      "confidence": 0.75,
+      "recommendation": "Inspect the flagged values: they may be data-entry errors or genuine tail events. Consider robust scaling or capping."
+    },
+    {
+      "severity": "warning",
+      "category": "distribution",
+      "column": "error_count",
+      "description": "'error_count' has a skewed distribution (skewness = 2.49432)",
+      "evidence": "Sample skewness over 301 non-null values; |1|+ indicates strong asymmetry to the right.",
+      "confidence": 0.9,
+      "recommendation": "The tail points to the right; consider a log/sqrt transform for modeling or report medians instead of means."
+    },
+    {
+      "severity": "warning",
+      "category": "distribution",
+      "column": "humidity_pct",
+      "description": "'humidity_pct' contains 3 values outside the IQR-based expected range [24.9, 64.9]",
+      "evidence": "Fences are Q1 - 1.5xIQR and Q3 + 1.5xIQR; 1.00% of 301 non-null values fall outside them.",
+      "confidence": 0.75,
+      "recommendation": "Inspect the flagged values: they may be data-entry errors or genuine tail events. Consider robust scaling or capping."
+    },
+    {
+      "severity": "warning",
+      "category": "distribution",
+      "column": "temperature_c",
+      "description": "'temperature_c' contains 4 values outside the IQR-based expected range [15.95, 25.95]",
+      "evidence": "Fences are Q1 - 1.5xIQR and Q3 + 1.5xIQR; 1.44% of 278 non-null values fall outside them.",
+      "confidence": 0.75,
+      "recommendation": "Inspect the flagged values: they may be data-entry errors or genuine tail events. Consider robust scaling or capping."
+    },
+    {
+      "severity": "warning",
+      "category": "cardinality",
+      "column": "reading_ts",
+      "description": "'reading_ts' is constant: every non-null row equals '2025-01-01'",
+      "evidence": "1 distinct value across 301 non-null rows (0.3% uniqueness).",
+      "confidence": 1.0,
+      "recommendation": "Drop the column or find out why it never varies in this extract."
+    },
+    {
+      "severity": "notice",
+      "category": "missingness",
+      "column": "temperature_c",
+      "description": "'temperature_c' is 7.6% missing (moderate)",
+      "evidence": "23 of 301 rows have no value.",
+      "confidence": 1.0,
+      "recommendation": "Usually acceptable, but confirm downstream consumers handle nulls correctly."
+    },
+    {
+      "severity": "notice",
+      "category": "schema",
+      "column": "reading_ts",
+      "description": "'reading_ts' is fully composed of dates-like values but is stored as text",
+      "evidence": "All 301 non-null values match a dates pattern (e.g. zip codes or IDs may legitimately be text).",
+      "confidence": 0.8,
+      "recommendation": "Cast to a numeric/date type if the values are true dates; keep as text if leading zeros or formatting matter."
+    },
+    {
+      "severity": "notice",
+      "category": "distribution",
+      "column": "error_count",
+      "description": "'error_count' is heavily zero-inflated (83.1% exact zeros)",
+      "evidence": "250 of 301 non-null values equal exactly 0.",
+      "confidence": 0.85,
+      "recommendation": "Consider modeling this as presence plus amount, or use zero-inflated methods; plain means will be misleading."
+    }
+  ],
+  "checks": [
+    {
+      "name": "Schema consistency",
+      "status": "GOOD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Constant columns",
+      "status": "1",
+      "passed": false,
+      "detail": "reading_ts"
+    },
+    {
+      "name": "Duplicate rows",
+      "status": "0.3%",
+      "passed": false,
+      "detail": null
+    },
+    {
+      "name": "Missing values",
+      "status": "OK",
+      "passed": true,
+      "detail": "1.5% of all cells are null"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+# Example threshold overrides for Dataset Doctor.
+# Usage: dataset-doctor data.csv --config doctor.toml
+#
+# Every key maps to a field of Thresholds (see
+# src/dataset_doctor/models/thresholds.py). Unknown keys are rejected.
+
+# Missingness severity rungs (% of nulls in a column).
+missing_notice_pct = 5.0
+missing_warning_pct = 20.0
+missing_critical_pct = 50.0
+
+# Duplicate rows: warn when either bound is exceeded.
+duplicate_warning_pct = 1.0
+duplicate_warning_min_rows = 10000
+
+# Numeric distribution checks.
+outlier_iqr_factor = 1.5
+skew_warning_abs = 1.0
+zero_inflation_pct = 80.0
+
+# Type consistency in text columns.
+mixed_type_warning_ratio = 0.3
+mixed_type_critical_ratio = 0.6
+
+# Health score weights.
+[severity_points]
+critical = 10
+warning = 4
+notice = 1
+
+[category_caps]
+missingness = 35
+duplicates = 15
+distribution = 20
+schema_issues = 20   # "schema" is a reserved name, hence the suffix
+cardinality = 10

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Dataset Doctor - examples\data\messy_sales.csv</title>
+<style>
+:root { --bg:#f6f8fa; --card:#ffffff; --text:#1f2328; --muted:#656d76;
+        --critical:#cf222e; --warning:#bc4c00; --notice:#9a6700; --ok:#1a7f37;
+        --border:#d0d7de; }
+* { box-sizing:border-box; }
+body { margin:0; padding:2rem; background:var(--bg); color:var(--text);
+       font:15px/1.5 system-ui,-apple-system,'Segoe UI',sans-serif; }
+main { max-width:1080px; margin:0 auto; }
+h1 { font-size:1.6rem; margin:0 0 .25rem; }
+.meta { color:var(--muted); font-size:.85rem; margin-bottom:1.5rem; }
+.card { background:var(--card); border:1px solid var(--border);
+        border-radius:10px; padding:1.25rem 1.5rem; margin-bottom:1.25rem; }
+.score-row { display:flex; align-items:center; gap:1.25rem; }
+.score { font-size:3rem; font-weight:700; }
+.grade { padding:.2rem .75rem; border-radius:999px; color:#fff;
+         font-weight:600; font-size:.85rem; }
+.grid { display:flex; flex-wrap:wrap; gap:.5rem 2rem; }
+.stat b { display:block; font-size:1.05rem; }
+.stat span { color:var(--muted); font-size:.8rem; }
+table { border-collapse:collapse; width:100%; margin-top:.5rem; }
+th, td { text-align:left; padding:.4rem .6rem; border-bottom:1px solid var(--border); }
+th { color:var(--muted); font-weight:600; font-size:.85rem; }
+.finding { border-left:4px solid var(--border); padding:.35rem 0 .35rem .85rem;
+           margin:.6rem 0; }
+.finding.critical { border-color:var(--critical); }
+.finding.warning { border-color:var(--warning); }
+.finding.notice { border-color:var(--notice); }
+.badge { font-size:.72rem; font-weight:700; letter-spacing:.05em; }
+.sev-critical { color:var(--critical); } .sev-warning { color:var(--warning); }
+.sev-notice { color:var(--notice); }
+.col-name { font-weight:600; }
+.evidence, .fix { color:var(--muted); font-size:.88rem; }
+.fix::before { content:'Fix: '; color:var(--ok); font-weight:600; }
+.checks li { list-style:none; padding:.15rem 0; }
+.checks ul { padding-left:0; margin:.4rem 0 0; }
+.pass { color:var(--ok); } .fail { color:var(--critical); }
+footer { color:var(--muted); font-size:.8rem; margin-top:1.5rem; }
+</style></head><body><main>
+<h1>Dataset Doctor</h1>
+<p class='meta'>Source: <code>examples\data\messy_sales.csv</code> &middot; format: csv</p>
+<div class='card'><div class='score-row'><div class='score'>70<span style='font-size:1.4rem;color:#656d76'>/100</span></div><div><span class='grade' style='background:#9a6700'>FAIR</span><p style='margin:.4rem 0 0;color:#656d76;font-size:.9rem'>Deterministic score: severity points per finding, capped per category.</p></div></div></div>
+<div class='card'><div class='grid'><div class='stat'><b>403</b><span>Rows</span></div><div class='stat'><b>10</b><span>Columns</span></div><div class='stat'><b>26.7 KB</b><span>File size</span></div><div class='stat'><b>0.7% (3)</b><span>Duplicate rows</span></div><div class='stat'><b>2.0%</b><span>Null cells</span></div></div></div>
+<div class='card'><b>Deductions by category</b><table><tr><th>Category</th><th>Deduction</th><th>Raw points</th><th>Cap</th><th>Findings</th></tr><tr><td>Schema &amp; types</td><td>-10</td><td>10</td><td>20</td><td>1</td></tr><tr><td>Cardinality &amp; constants</td><td>-10</td><td>10</td><td>10</td><td>4</td></tr><tr><td>Outliers &amp; distribution</td><td>-9</td><td>9</td><td>20</td><td>3</td></tr><tr><td>Missing values</td><td>-1</td><td>1</td><td>35</td><td>1</td></tr></table></div>
+<div class='card checks'><b>Checks</b><ul><li><span class='fail'>&#10007;</span> Schema consistency: <b>ISSUES FOUND</b></li><li><span class='fail'>&#10007;</span> Constant columns: <b>1</b></li><li><span class='fail'>&#10007;</span> Duplicate rows: <b>0.7%</b></li><li><span class='pass'>&#10003;</span> Missing values: <b>OK</b></li></ul></div>
+<div class='card'><b>Issues found (9)</b><div class='finding critical'><span class='badge sev-critical'>CRITICAL</span> &middot; schema &middot; confidence 85%<div><span class='col-name'>price_text</span> → &#x27;price_text&#x27; is stored as text but 80.9% of its values parse as numbers, while the rest do not</div><div class='evidence'>326 of 403 non-null values match a numbers pattern; the remainder forced the column to text type.</div><div class='fix'>Fix or standardize the numbers-like values and parse the column into its natural type at load time.</div></div><div class='finding warning'><span class='badge sev-warning'>WARNING</span> &middot; distribution &middot; confidence 75%<div><span class='col-name'>age</span> → &#x27;age&#x27; contains 2 values outside the IQR-based expected range [10.75, 64.75]</div><div class='evidence'>Fences are Q1 - 1.5xIQR and Q3 + 1.5xIQR; 0.62% of 323 non-null values fall outside them.</div><div class='fix'>Inspect the flagged values: they may be data-entry errors or genuine tail events. Consider robust scaling or capping.</div></div><div class='finding warning'><span class='badge sev-warning'>WARNING</span> &middot; distribution &middot; confidence 90%<div><span class='col-name'>age</span> → &#x27;age&#x27; has a skewed distribution (skewness = 17.0978)</div><div class='evidence'>Sample skewness over 323 non-null values; |1|+ indicates strong asymmetry to the right.</div><div class='fix'>The tail points to the right; consider a log/sqrt transform for modeling or report medians instead of means.</div></div><div class='finding warning'><span class='badge sev-warning'>WARNING</span> &middot; cardinality &middot; confidence 85%<div><span class='col-name'>city</span> → &#x27;city&#x27; has inconsistent category labels: 4 distinct values collapse to 2 after trimming whitespace and case-folding</div><div class='evidence'>Values differing only by surrounding spaces or letter case (e.g. &#x27; NY &#x27; vs &#x27;NY&#x27; vs &#x27;ny&#x27;) split otherwise identical categories.</div><div class='fix'>Normalize labels (strip + lowercase or a mapping table) before grouping or encoding.</div></div><div class='finding warning'><span class='badge sev-warning'>WARNING</span> &middot; cardinality &middot; confidence 100%<div><span class='col-name'>country</span> → &#x27;country&#x27; is constant: every non-null row equals &#x27;USA&#x27;</div><div class='evidence'>1 distinct value across 403 non-null rows (0.2% uniqueness).</div><div class='fix'>Drop the column or find out why it never varies in this extract.</div></div><div class='finding notice'><span class='badge sev-notice'>NOTICE</span> &middot; missingness &middot; confidence 100%<div><span class='col-name'>age</span> → &#x27;age&#x27; is 19.9% missing (moderate)</div><div class='evidence'>80 of 403 rows have no value.</div><div class='fix'>Usually acceptable, but confirm downstream consumers handle nulls correctly.</div></div><div class='finding notice'><span class='badge sev-notice'>NOTICE</span> &middot; distribution &middot; confidence 70%<div><span class='col-name'>income</span> → &#x27;income&#x27; has a skewed distribution (skewness = 0.618794)</div><div class='evidence'>Sample skewness over 403 non-null values; |1|+ indicates strong asymmetry to the right.</div><div class='fix'>The tail points to the right; consider a log/sqrt transform for modeling or report medians instead of means.</div></div><div class='finding notice'><span class='badge sev-notice'>NOTICE</span> &middot; cardinality &middot; confidence 85%<div><span class='col-name'>notes</span> → &#x27;notes&#x27; has very high cardinality (400 distinct values, 99% of rows)</div><div class='evidence'>High-cardinality text columns behave like identifiers and are poor categorical features.</div><div class='fix'>Verify whether this is a key; exclude from group-bys and encodings.</div></div><div class='finding notice'><span class='badge sev-notice'>NOTICE</span> &middot; cardinality &middot; confidence 85%<div><span class='col-name'>order_id</span> → &#x27;order_id&#x27; has very high cardinality (390 distinct values, 97% of rows)</div><div class='evidence'>High-cardinality text columns behave like identifiers and are poor categorical features.</div><div class='fix'>Verify whether this is a key; exclude from group-bys and encodings.</div></div></div>
+<div class='card'><b>Column profiles</b><table><tr><th>Column</th><th>Type</th><th>Semantic</th><th>Null %</th><th>Unique %</th><th>Min</th><th>Max</th><th>Mean</th><th>Std</th></tr><tr><td>order_id</td><td>String</td><td>text</td><td>0.0%</td><td>96.8%</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>customer_id</td><td>Int64</td><td>numeric</td><td>0.0%</td><td>99.3%</td><td>0</td><td>399</td><td>198.05707196029778</td><td>116.3840110505785</td></tr><tr><td>age</td><td>Int64</td><td>numeric</td><td>19.9%</td><td>14.2%</td><td>16</td><td>999</td><td>40.362229102167184</td><td>54.31329119087349</td></tr><tr><td>income</td><td>Int64</td><td>numeric</td><td>0.0%</td><td>1.0%</td><td>0</td><td>3,000</td><td>578.1637717121588</td><td>594.9368485050509</td></tr><tr><td>city</td><td>String</td><td>categorical</td><td>0.0%</td><td>1.0%</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>country</td><td>String</td><td>categorical</td><td>0.0%</td><td>0.2%</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>price_text</td><td>String</td><td>text</td><td>0.0%</td><td>86.6%</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>discount_code</td><td>String</td><td>categorical</td><td>0.0%</td><td>0.7%</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>notes</td><td>String</td><td>text</td><td>0.0%</td><td>99.3%</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>created</td><td>Date</td><td>datetime</td><td>0.0%</td><td>14.9%</td><td>2024-03-01</td><td>2024-04-29</td><td>-</td><td>-</td></tr></table></div>
+<footer>Generated 2026-08-24T21:35:56+00:00 by dataset-doctor v0.1.0. Score methodology: severity points capped per category.</footer>
+</main></body></html>

@@ -1,0 +1,334 @@
+{
+  "tool": "dataset-doctor",
+  "version": "0.1.0",
+  "generated_at": "2026-08-24T21:35:54.854032Z",
+  "source_path": "examples\\data\\healthy_customers.csv",
+  "health_score": {
+    "score": 96,
+    "grade": "GOOD",
+    "total_deduction": 4,
+    "deductions": [
+      {
+        "category": "distribution",
+        "label": "Outliers & distribution",
+        "points": 4,
+        "cap": 20,
+        "deduction": 4,
+        "finding_count": 1
+      }
+    ]
+  },
+  "summary": {
+    "critical": 0,
+    "warning": 1,
+    "notice": 0
+  },
+  "dataset": {
+    "source_path": "examples\\data\\healthy_customers.csv",
+    "resolved_path": "C:\\Users\\Victus 16\\Dataset-Doctor\\examples\\data\\healthy_customers.csv",
+    "file_format": "csv",
+    "file_size_bytes": 39167,
+    "row_count": 600,
+    "column_count": 8,
+    "duplicate_row_count": 0,
+    "duplicate_pct": 0.0,
+    "total_null_count": 0,
+    "total_null_pct": 0.0,
+    "columns": [
+      {
+        "name": "customer_id",
+        "dtype": "Int64",
+        "semantic_type": "numeric",
+        "row_count": 600,
+        "null_count": 0,
+        "null_pct": 0.0,
+        "unique_count": 600,
+        "unique_pct": 100.0,
+        "constant": false,
+        "min_value": "1,000",
+        "max_value": "1,599",
+        "mean_value": 1299.5,
+        "std_value": 173.34935823359717,
+        "median_value": 1299.5,
+        "q1_value": 1149.75,
+        "q3_value": 1449.25,
+        "skewness": 0.0,
+        "avg_length": null,
+        "most_frequent": []
+      },
+      {
+        "name": "name",
+        "dtype": "String",
+        "semantic_type": "text",
+        "row_count": 600,
+        "null_count": 0,
+        "null_pct": 0.0,
+        "unique_count": 397,
+        "unique_pct": 66.16666666666666,
+        "constant": false,
+        "min_value": null,
+        "max_value": null,
+        "mean_value": null,
+        "std_value": null,
+        "median_value": null,
+        "q1_value": null,
+        "q3_value": null,
+        "skewness": null,
+        "avg_length": 7.45,
+        "most_frequent": [
+          {
+            "value": "Sam 93",
+            "count": 4,
+            "pct": 0.6666666666666667
+          },
+          {
+            "value": "Alex 108",
+            "count": 3,
+            "pct": 0.5
+          },
+          {
+            "value": "Alex 18",
+            "count": 3,
+            "pct": 0.5
+          },
+          {
+            "value": "Alex 35",
+            "count": 3,
+            "pct": 0.5
+          },
+          {
+            "value": "Alex 38",
+            "count": 3,
+            "pct": 0.5
+          }
+        ]
+      },
+      {
+        "name": "email",
+        "dtype": "String",
+        "semantic_type": "text",
+        "row_count": 600,
+        "null_count": 0,
+        "null_pct": 0.0,
+        "unique_count": 520,
+        "unique_pct": 86.66666666666667,
+        "constant": false,
+        "min_value": null,
+        "max_value": null,
+        "mean_value": null,
+        "std_value": null,
+        "median_value": null,
+        "q1_value": null,
+        "q3_value": null,
+        "skewness": null,
+        "avg_length": 18.666666666666668,
+        "most_frequent": [
+          {
+            "value": "user0@example.com",
+            "count": 2,
+            "pct": 0.33333333333333337
+          },
+          {
+            "value": "user10@example.com",
+            "count": 2,
+            "pct": 0.33333333333333337
+          },
+          {
+            "value": "user11@example.com",
+            "count": 2,
+            "pct": 0.33333333333333337
+          },
+          {
+            "value": "user12@example.com",
+            "count": 2,
+            "pct": 0.33333333333333337
+          },
+          {
+            "value": "user13@example.com",
+            "count": 2,
+            "pct": 0.33333333333333337
+          }
+        ]
+      },
+      {
+        "name": "age",
+        "dtype": "Int64",
+        "semantic_type": "numeric",
+        "row_count": 600,
+        "null_count": 0,
+        "null_pct": 0.0,
+        "unique_count": 43,
+        "unique_pct": 7.166666666666667,
+        "constant": false,
+        "min_value": "22",
+        "max_value": "69",
+        "mean_value": 39.221666666666664,
+        "std_value": 8.070176172880268,
+        "median_value": 39.0,
+        "q1_value": 33.0,
+        "q3_value": 45.0,
+        "skewness": 0.33723081071542255,
+        "avg_length": null,
+        "most_frequent": []
+      },
+      {
+        "name": "city",
+        "dtype": "String",
+        "semantic_type": "categorical",
+        "row_count": 600,
+        "null_count": 0,
+        "null_pct": 0.0,
+        "unique_count": 5,
+        "unique_pct": 0.8333333333333334,
+        "constant": false,
+        "min_value": null,
+        "max_value": null,
+        "mean_value": null,
+        "std_value": null,
+        "median_value": null,
+        "q1_value": null,
+        "q3_value": null,
+        "skewness": null,
+        "avg_length": null,
+        "most_frequent": [
+          {
+            "value": "Berlin",
+            "count": 120,
+            "pct": 20.0
+          },
+          {
+            "value": "Madrid",
+            "count": 120,
+            "pct": 20.0
+          },
+          {
+            "value": "Paris",
+            "count": 120,
+            "pct": 20.0
+          },
+          {
+            "value": "Vienna",
+            "count": 120,
+            "pct": 20.0
+          },
+          {
+            "value": "Warsaw",
+            "count": 120,
+            "pct": 20.0
+          }
+        ]
+      },
+      {
+        "name": "signup_date",
+        "dtype": "Date",
+        "semantic_type": "datetime",
+        "row_count": 600,
+        "null_count": 0,
+        "null_pct": 0.0,
+        "unique_count": 600,
+        "unique_pct": 100.0,
+        "constant": false,
+        "min_value": "2022-01-01",
+        "max_value": "2023-08-23",
+        "mean_value": null,
+        "std_value": null,
+        "median_value": null,
+        "q1_value": null,
+        "q3_value": null,
+        "skewness": null,
+        "avg_length": null,
+        "most_frequent": []
+      },
+      {
+        "name": "is_active",
+        "dtype": "Boolean",
+        "semantic_type": "boolean",
+        "row_count": 600,
+        "null_count": 0,
+        "null_pct": 0.0,
+        "unique_count": 2,
+        "unique_pct": 0.33333333333333337,
+        "constant": false,
+        "min_value": null,
+        "max_value": null,
+        "mean_value": null,
+        "std_value": null,
+        "median_value": null,
+        "q1_value": null,
+        "q3_value": null,
+        "skewness": null,
+        "avg_length": null,
+        "most_frequent": [
+          {
+            "value": "true",
+            "count": 400,
+            "pct": 66.66666666666666
+          },
+          {
+            "value": "false",
+            "count": 200,
+            "pct": 33.33333333333333
+          }
+        ]
+      },
+      {
+        "name": "monthly_spend",
+        "dtype": "Float64",
+        "semantic_type": "numeric",
+        "row_count": 600,
+        "null_count": 0,
+        "null_pct": 0.0,
+        "unique_count": 567,
+        "unique_pct": 94.5,
+        "constant": false,
+        "min_value": "5.66",
+        "max_value": "114.72",
+        "mean_value": 50.6122,
+        "std_value": 14.672960930368037,
+        "median_value": 50.56,
+        "q1_value": 40.75,
+        "q3_value": 60.2825,
+        "skewness": 0.14293577695365467,
+        "avg_length": null,
+        "most_frequent": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "severity": "warning",
+      "category": "distribution",
+      "column": "monthly_spend",
+      "description": "'monthly_spend' contains 8 values outside the IQR-based expected range [11.4513, 89.5812]",
+      "evidence": "Fences are Q1 - 1.5xIQR and Q3 + 1.5xIQR; 1.33% of 600 non-null values fall outside them.",
+      "confidence": 0.75,
+      "recommendation": "Inspect the flagged values: they may be data-entry errors or genuine tail events. Consider robust scaling or capping."
+    }
+  ],
+  "checks": [
+    {
+      "name": "Schema consistency",
+      "status": "GOOD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Constant columns",
+      "status": "NONE",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Duplicate rows",
+      "status": "NONE",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Missing values",
+      "status": "OK",
+      "passed": true,
+      "detail": "0.0% of all cells are null"
+    }
+  ]
+}

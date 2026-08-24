@@ -1,0 +1,504 @@
+{
+  "tool": "dataset-doctor",
+  "version": "0.1.0",
+  "generated_at": "2026-08-24T21:35:56.343649Z",
+  "source_path": "examples\\data\\messy_sales.csv",
+  "health_score": {
+    "score": 70,
+    "grade": "FAIR",
+    "total_deduction": 30,
+    "deductions": [
+      {
+        "category": "schema",
+        "label": "Schema & types",
+        "points": 10,
+        "cap": 20,
+        "deduction": 10,
+        "finding_count": 1
+      },
+      {
+        "category": "cardinality",
+        "label": "Cardinality & constants",
+        "points": 10,
+        "cap": 10,
+        "deduction": 10,
+        "finding_count": 4
+      },
+      {
+        "category": "distribution",
+        "label": "Outliers & distribution",
+        "points": 9,
+        "cap": 20,
+        "deduction": 9,
+        "finding_count": 3
+      },
+      {
+        "category": "missingness",
+        "label": "Missing values",
+        "points": 1,
+        "cap": 35,
+        "deduction": 1,
+        "finding_count": 1
+      }
+    ]
+  },
+  "summary": {
+    "critical": 1,
+    "warning": 4,
+    "notice": 4
+  },
+  "dataset": {
+    "source_path": "examples\\data\\messy_sales.csv",
+    "resolved_path": "C:\\Users\\Victus 16\\Dataset-Doctor\\examples\\data\\messy_sales.csv",
+    "file_format": "csv",
+    "file_size_bytes": 27388,
+    "row_count": 403,
+    "column_count": 10,
+    "duplicate_row_count": 3,
+    "duplicate_pct": 0.7444168734491315,
+    "total_null_count": 80,
+    "total_null_pct": 1.9851116625310175,
+    "columns": [
+      {
+        "name": "order_id",
+        "dtype": "String",
+        "semantic_type": "text",
+        "row_count": 403,
+        "null_count": 0,
+        "null_pct": 0.0,
+        "unique_count": 390,
+        "unique_pct": 96.7741935483871,
+        "constant": false,
+        "min_value": null,
+        "max_value": null,
+        "mean_value": null,
+        "std_value": null,
+        "median_value": null,
+        "q1_value": null,
+        "q3_value": null,
+        "skewness": null,
+        "avg_length": 7.880893300248139,
+        "most_frequent": [
+          {
+            "value": "ORD-4331",
+            "count": 3,
+            "pct": 0.7444168734491315
+          },
+          {
+            "value": "ORD-1037",
+            "count": 2,
+            "pct": 0.49627791563275436
+          },
+          {
+            "value": "ORD-1083",
+            "count": 2,
+            "pct": 0.49627791563275436
+          },
+          {
+            "value": "ORD-1854",
+            "count": 2,
+            "pct": 0.49627791563275436
+          },
+          {
+            "value": "ORD-1923",
+            "count": 2,
+            "pct": 0.49627791563275436
+          }
+        ]
+      },
+      {
+        "name": "customer_id",
+        "dtype": "Int64",
+        "semantic_type": "numeric",
+        "row_count": 403,
+        "null_count": 0,
+        "null_pct": 0.0,
+        "unique_count": 400,
+        "unique_pct": 99.25558312655087,
+        "constant": false,
+        "min_value": "0",
+        "max_value": "399",
+        "mean_value": 198.05707196029778,
+        "std_value": 116.3840110505785,
+        "median_value": 198.0,
+        "q1_value": 97.5,
+        "q3_value": 298.5,
+        "skewness": 0.002714735885487405,
+        "avg_length": null,
+        "most_frequent": []
+      },
+      {
+        "name": "age",
+        "dtype": "Int64",
+        "semantic_type": "numeric",
+        "row_count": 403,
+        "null_count": 80,
+        "null_pct": 19.851116625310176,
+        "unique_count": 46,
+        "unique_pct": 14.241486068111456,
+        "constant": false,
+        "min_value": "16",
+        "max_value": "999",
+        "mean_value": 40.362229102167184,
+        "std_value": 54.31329119087349,
+        "median_value": 37.0,
+        "q1_value": 31.0,
+        "q3_value": 44.5,
+        "skewness": 17.097755322671972,
+        "avg_length": null,
+        "most_frequent": []
+      },
+      {
+        "name": "income",
+        "dtype": "Int64",
+        "semantic_type": "numeric",
+        "row_count": 403,
+        "null_count": 0,
+        "null_pct": 0.0,
+        "unique_count": 4,
+        "unique_pct": 0.9925558312655087,
+        "constant": false,
+        "min_value": "0",
+        "max_value": "3,000",
+        "mean_value": 578.1637717121588,
+        "std_value": 594.9368485050509,
+        "median_value": 1000.0,
+        "q1_value": 0.0,
+        "q3_value": 1000.0,
+        "skewness": 0.6187939216493953,
+        "avg_length": null,
+        "most_frequent": []
+      },
+      {
+        "name": "city",
+        "dtype": "String",
+        "semantic_type": "categorical",
+        "row_count": 403,
+        "null_count": 0,
+        "null_pct": 0.0,
+        "unique_count": 4,
+        "unique_pct": 0.9925558312655087,
+        "constant": false,
+        "min_value": null,
+        "max_value": null,
+        "mean_value": null,
+        "std_value": null,
+        "median_value": null,
+        "q1_value": null,
+        "q3_value": null,
+        "skewness": null,
+        "avg_length": null,
+        "most_frequent": [
+          {
+            "value": "NYC ",
+            "count": 117,
+            "pct": 29.03225806451613
+          },
+          {
+            "value": "Boston",
+            "count": 102,
+            "pct": 25.31017369727047
+          },
+          {
+            "value": "nyc",
+            "count": 94,
+            "pct": 23.325062034739457
+          },
+          {
+            "value": "NYC",
+            "count": 90,
+            "pct": 22.332506203473944
+          }
+        ]
+      },
+      {
+        "name": "country",
+        "dtype": "String",
+        "semantic_type": "categorical",
+        "row_count": 403,
+        "null_count": 0,
+        "null_pct": 0.0,
+        "unique_count": 1,
+        "unique_pct": 0.24813895781637718,
+        "constant": true,
+        "min_value": null,
+        "max_value": null,
+        "mean_value": null,
+        "std_value": null,
+        "median_value": null,
+        "q1_value": null,
+        "q3_value": null,
+        "skewness": null,
+        "avg_length": null,
+        "most_frequent": [
+          {
+            "value": "USA",
+            "count": 403,
+            "pct": 100.0
+          }
+        ]
+      },
+      {
+        "name": "price_text",
+        "dtype": "String",
+        "semantic_type": "text",
+        "row_count": 403,
+        "null_count": 0,
+        "null_pct": 0.0,
+        "unique_count": 349,
+        "unique_pct": 86.60049627791562,
+        "constant": false,
+        "min_value": null,
+        "max_value": null,
+        "mean_value": null,
+        "std_value": null,
+        "median_value": null,
+        "q1_value": null,
+        "q3_value": null,
+        "skewness": null,
+        "avg_length": 3.1910669975186106,
+        "most_frequent": [
+          {
+            "value": "393",
+            "count": 3,
+            "pct": 0.7444168734491315
+          },
+          {
+            "value": "462",
+            "count": 3,
+            "pct": 0.7444168734491315
+          },
+          {
+            "value": "529",
+            "count": 3,
+            "pct": 0.7444168734491315
+          },
+          {
+            "value": "663",
+            "count": 3,
+            "pct": 0.7444168734491315
+          },
+          {
+            "value": "680",
+            "count": 3,
+            "pct": 0.7444168734491315
+          }
+        ]
+      },
+      {
+        "name": "discount_code",
+        "dtype": "String",
+        "semantic_type": "categorical",
+        "row_count": 403,
+        "null_count": 0,
+        "null_pct": 0.0,
+        "unique_count": 3,
+        "unique_pct": 0.7444168734491315,
+        "constant": false,
+        "min_value": null,
+        "max_value": null,
+        "mean_value": null,
+        "std_value": null,
+        "median_value": null,
+        "q1_value": null,
+        "q3_value": null,
+        "skewness": null,
+        "avg_length": null,
+        "most_frequent": [
+          {
+            "value": "",
+            "count": 200,
+            "pct": 49.62779156327544
+          },
+          {
+            "value": "SAVE20",
+            "count": 108,
+            "pct": 26.799007444168733
+          },
+          {
+            "value": "SAVE10",
+            "count": 95,
+            "pct": 23.573200992555833
+          }
+        ]
+      },
+      {
+        "name": "notes",
+        "dtype": "String",
+        "semantic_type": "text",
+        "row_count": 403,
+        "null_count": 0,
+        "null_pct": 0.0,
+        "unique_count": 400,
+        "unique_pct": 99.25558312655087,
+        "constant": false,
+        "min_value": null,
+        "max_value": null,
+        "mean_value": null,
+        "std_value": null,
+        "median_value": null,
+        "q1_value": null,
+        "q3_value": null,
+        "skewness": null,
+        "avg_length": 18.712158808933,
+        "most_frequent": [
+          {
+            "value": "note 7 - 0.192264",
+            "count": 3,
+            "pct": 0.7444168734491315
+          },
+          {
+            "value": "note 3 - 0.265530",
+            "count": 2,
+            "pct": 0.49627791563275436
+          },
+          {
+            "value": "note 0 - 0.713592",
+            "count": 1,
+            "pct": 0.24813895781637718
+          },
+          {
+            "value": "note 1 - 0.392955",
+            "count": 1,
+            "pct": 0.24813895781637718
+          },
+          {
+            "value": "note 10 - 0.137273",
+            "count": 1,
+            "pct": 0.24813895781637718
+          }
+        ]
+      },
+      {
+        "name": "created",
+        "dtype": "Date",
+        "semantic_type": "datetime",
+        "row_count": 403,
+        "null_count": 0,
+        "null_pct": 0.0,
+        "unique_count": 60,
+        "unique_pct": 14.888337468982629,
+        "constant": false,
+        "min_value": "2024-03-01",
+        "max_value": "2024-04-29",
+        "mean_value": null,
+        "std_value": null,
+        "median_value": null,
+        "q1_value": null,
+        "q3_value": null,
+        "skewness": null,
+        "avg_length": null,
+        "most_frequent": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "severity": "critical",
+      "category": "schema",
+      "column": "price_text",
+      "description": "'price_text' is stored as text but 80.9% of its values parse as numbers, while the rest do not",
+      "evidence": "326 of 403 non-null values match a numbers pattern; the remainder forced the column to text type.",
+      "confidence": 0.85,
+      "recommendation": "Fix or standardize the numbers-like values and parse the column into its natural type at load time."
+    },
+    {
+      "severity": "warning",
+      "category": "distribution",
+      "column": "age",
+      "description": "'age' contains 2 values outside the IQR-based expected range [10.75, 64.75]",
+      "evidence": "Fences are Q1 - 1.5xIQR and Q3 + 1.5xIQR; 0.62% of 323 non-null values fall outside them.",
+      "confidence": 0.75,
+      "recommendation": "Inspect the flagged values: they may be data-entry errors or genuine tail events. Consider robust scaling or capping."
+    },
+    {
+      "severity": "warning",
+      "category": "distribution",
+      "column": "age",
+      "description": "'age' has a skewed distribution (skewness = 17.0978)",
+      "evidence": "Sample skewness over 323 non-null values; |1|+ indicates strong asymmetry to the right.",
+      "confidence": 0.9,
+      "recommendation": "The tail points to the right; consider a log/sqrt transform for modeling or report medians instead of means."
+    },
+    {
+      "severity": "warning",
+      "category": "cardinality",
+      "column": "city",
+      "description": "'city' has inconsistent category labels: 4 distinct values collapse to 2 after trimming whitespace and case-folding",
+      "evidence": "Values differing only by surrounding spaces or letter case (e.g. ' NY ' vs 'NY' vs 'ny') split otherwise identical categories.",
+      "confidence": 0.85,
+      "recommendation": "Normalize labels (strip + lowercase or a mapping table) before grouping or encoding."
+    },
+    {
+      "severity": "warning",
+      "category": "cardinality",
+      "column": "country",
+      "description": "'country' is constant: every non-null row equals 'USA'",
+      "evidence": "1 distinct value across 403 non-null rows (0.2% uniqueness).",
+      "confidence": 1.0,
+      "recommendation": "Drop the column or find out why it never varies in this extract."
+    },
+    {
+      "severity": "notice",
+      "category": "missingness",
+      "column": "age",
+      "description": "'age' is 19.9% missing (moderate)",
+      "evidence": "80 of 403 rows have no value.",
+      "confidence": 1.0,
+      "recommendation": "Usually acceptable, but confirm downstream consumers handle nulls correctly."
+    },
+    {
+      "severity": "notice",
+      "category": "distribution",
+      "column": "income",
+      "description": "'income' has a skewed distribution (skewness = 0.618794)",
+      "evidence": "Sample skewness over 403 non-null values; |1|+ indicates strong asymmetry to the right.",
+      "confidence": 0.7,
+      "recommendation": "The tail points to the right; consider a log/sqrt transform for modeling or report medians instead of means."
+    },
+    {
+      "severity": "notice",
+      "category": "cardinality",
+      "column": "notes",
+      "description": "'notes' has very high cardinality (400 distinct values, 99% of rows)",
+      "evidence": "High-cardinality text columns behave like identifiers and are poor categorical features.",
+      "confidence": 0.85,
+      "recommendation": "Verify whether this is a key; exclude from group-bys and encodings."
+    },
+    {
+      "severity": "notice",
+      "category": "cardinality",
+      "column": "order_id",
+      "description": "'order_id' has very high cardinality (390 distinct values, 97% of rows)",
+      "evidence": "High-cardinality text columns behave like identifiers and are poor categorical features.",
+      "confidence": 0.85,
+      "recommendation": "Verify whether this is a key; exclude from group-bys and encodings."
+    }
+  ],
+  "checks": [
+    {
+      "name": "Schema consistency",
+      "status": "ISSUES FOUND",
+      "passed": false,
+      "detail": "1 issue(s)"
+    },
+    {
+      "name": "Constant columns",
+      "status": "1",
+      "passed": false,
+      "detail": "country"
+    },
+    {
+      "name": "Duplicate rows",
+      "status": "0.7%",
+      "passed": false,
+      "detail": null
+    },
+    {
+      "name": "Missing values",
+      "status": "OK",
+      "passed": true,
+      "detail": "2.0% of all cells are null"
+    }
+  ]
+}
