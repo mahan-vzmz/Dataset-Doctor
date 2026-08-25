@@ -3,7 +3,6 @@ name = "dataset-doctor"
 version = "0.1.0"
 description = "A CLI health check for tabular datasets: profiling, deterministic quality findings, and an explainable health score."
 readme = "README.md"
-license = { file = "LICENSE" }
 authors = [{ name = "Dataset Doctor contributors" }]
 requires-python = ">=3.12"
 keywords = ["data-quality", "profiling", "data-engineering", "cli", "csv", "parquet"]

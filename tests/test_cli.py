@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import contextlib
+import re
 from collections.abc import Callable
 from pathlib import Path
 
@@ -11,7 +12,13 @@ from typer.testing import CliRunner, Result
 
 from dataset_doctor.cli import app
 
-runner = CliRunner()
+runner = CliRunner(env={"NO_COLOR": "1", "TERM": "dumb"})
+
+_ANSI_RE = re.compile(r"\x1b\[[0-9;]*[a-zA-Z]")
+
+
+def _strip_ansi(text: str) -> str:
+    return _ANSI_RE.sub("", text)
 
 
 def _combined(result: Result) -> str:
@@ -19,7 +26,7 @@ def _combined(result: Result) -> str:
     stderr_text = ""
     with contextlib.suppress(ValueError, AttributeError):
         stderr_text = result.stderr
-    return str(result.output) + "\n" + stderr_text
+    return _strip_ansi(str(result.output) + "\n" + stderr_text)
 
 
 def test_human_report_on_clean_data(write_file: Callable[[str, str | bytes], Path]) -> None:
@@ -158,5 +165,6 @@ def test_unwritable_output_target(
 def test_help_mentions_examples() -> None:
     result = runner.invoke(app, ["--help"])
     assert result.exit_code == 0
-    assert "--format" in result.output
-    assert "--html" in result.output
+    output = _strip_ansi(result.output)
+    assert "--format" in output
+    assert "--html" in output

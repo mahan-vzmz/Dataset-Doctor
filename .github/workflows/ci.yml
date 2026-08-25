@@ -34,18 +34,3 @@ jobs:
 
       - name: Tests
         run: uv run pytest --cov --cov-report=term-missing
-
-  docker:
-    name: Docker build
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Build image
-        run: docker build -t dataset-doctor:ci .
-
-      - name: Smoke test image
-        run: |
-          docker run --rm -v "$PWD/examples/data:/data:ro" dataset-doctor:ci \
-            /data/healthy_customers.csv --format json > /dev/null

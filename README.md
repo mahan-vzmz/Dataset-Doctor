@@ -195,17 +195,6 @@ uv run mypy src tests          # type check (strict-ish)
 CI runs all four on Python 3.12 and 3.13 via GitHub Actions
 (`.github/workflows/ci.yml`).
 
-## Docker
-
-```bash
-docker build -t dataset-doctor .
-docker run --rm -v "$PWD/examples/data:/data" dataset-doctor /data/messy_sales.csv
-docker run --rm -v "$PWD:/data" dataset-doctor /data/big.csv --html /data/report.html
-```
-
-The image is a thin `python:3.12-slim` layer with the package installed; the
-container entrypoint is the CLI itself.
-
 ## Roadmap
 
 - Streaming/lazy mode (DuckDB-backed) for larger-than-memory files
