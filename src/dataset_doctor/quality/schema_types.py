@@ -118,7 +118,16 @@ def _header_findings(loaded: LoadedDataset) -> list[Finding]:
 def _read_header(path: Path) -> list[str] | None:
     try:
         with open(path, encoding="utf-8-sig", newline="") as handle:
-            row = next(csv.reader(handle), None)
+            sample = handle.read(8192)
+            handle.seek(0)
+            if not sample:
+                return None
+            try:
+                dialect = csv.Sniffer().sniff(sample, delimiters=",\t;|")
+                reader = csv.reader(handle, dialect)
+            except csv.Error:
+                reader = csv.reader(handle)
+            row = next(reader, None)
     except (OSError, UnicodeDecodeError):
         return None
     return row

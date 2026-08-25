@@ -75,3 +75,16 @@ def test_cardinality_checks_need_minimum_rows(tmp_path: Path) -> None:
     df = pl.DataFrame({"k": ["a", "b", "c", "d"], "v": [1.0, 2, 3, 4]})
     findings = [f for f in run(make_context(df, tmp_path)) if f.column == "k"]
     assert findings == []
+
+
+def test_subtle_casing_variant_detected(tmp_path: Path) -> None:
+    # 20 distinct categories with only 1 variant casing ("cat1" vs "CAT1")
+    categories = [f"cat{i}" for i in range(19)] + ["cat1", "CAT1"]
+    df = pl.DataFrame({"cat": categories * 10})
+    findings = [
+        f
+        for f in run(make_context(df, tmp_path))
+        if f.category == FindingCategory.CARDINALITY
+        and "inconsistent category labels" in f.description
+    ]
+    assert len(findings) == 1

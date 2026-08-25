@@ -141,8 +141,6 @@ def _variant_label_finding(
     normalized_unique = int(series.n_unique())
     if normalized_unique >= raw_unique:
         return []
-    if normalized_unique > raw_unique * thresholds.variant_collapse_ratio:
-        return []
 
     return [
         Finding(

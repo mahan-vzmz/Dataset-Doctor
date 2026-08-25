@@ -43,6 +43,10 @@ def _outlier_finding(
     if column.q1_value is None or column.q3_value is None:
         return []
     iqr = column.q3_value - column.q1_value
+    if iqr <= 0:
+        # Collapsed quartiles (>50% identical values) make every other valid
+        # value fall outside the degenerate fences [Q1, Q1]; skip the check.
+        return []
     factor = thresholds.outlier_iqr_factor
     lower = column.q1_value - factor * iqr
     upper = column.q3_value + factor * iqr

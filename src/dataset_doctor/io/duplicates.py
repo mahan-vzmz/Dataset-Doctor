@@ -42,7 +42,7 @@ def count_duplicate_rows(loaded: LoadedDataset) -> int:
 
 def _duckdb_source(loaded: LoadedDataset) -> str | None:
     """Build a DuckDB table function expression, or ``None`` to use the fallback."""
-    path_sql = str(loaded.path).replace("'", "''")
+    path_sql = loaded.path.as_posix().replace("'", "''")
     match loaded.file_format:
         case "parquet":
             return f"read_parquet('{path_sql}')"

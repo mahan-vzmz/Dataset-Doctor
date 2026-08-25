@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING
 
 from dataset_doctor.models.findings import Severity
 from dataset_doctor.models.score import ScoreCategoryBreakdown
-from dataset_doctor.utils import format_bytes, format_count, format_pct
+from dataset_doctor.utils import format_bytes, format_count, format_number, format_pct
 
 if TYPE_CHECKING:
     from dataset_doctor.models.findings import Finding
@@ -208,8 +208,8 @@ def _columns_section(columns: list[ColumnProfile]) -> str:
             f"<td>{format_pct(column.unique_pct)}</td>"
             f"<td>{html.escape(column.min_value or '-')}</td>"
             f"<td>{html.escape(column.max_value or '-')}</td>"
-            f"<td>{column.mean_value if column.mean_value is not None else '-'}</td>"
-            f"<td>{column.std_value if column.std_value is not None else '-'}</td>"
+            f"<td>{format_number(column.mean_value) if column.mean_value is not None else '-'}</td>"
+            f"<td>{format_number(column.std_value) if column.std_value is not None else '-'}</td>"
             "</tr>"
         )
     return (

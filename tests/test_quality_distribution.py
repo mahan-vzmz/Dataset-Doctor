@@ -98,3 +98,10 @@ def test_constant_numeric_column_skews_nothing(tmp_path: Path) -> None:
     df = pl.DataFrame({"flat": [5.0] * 50})
     findings = run(make_context(df, tmp_path))
     assert findings == []
+
+
+def test_zero_iqr_does_not_flag_outliers(tmp_path: Path) -> None:
+    # 80 rows of 5.0, 10 rows of 4.0, 10 rows of 6.0 -> Q1=5.0, Q3=5.0, IQR=0
+    df = pl.DataFrame({"x": [5.0] * 80 + [4.0] * 10 + [6.0] * 10})
+    findings = [f for f in run(make_context(df, tmp_path)) if "IQR" in f.description]
+    assert findings == []
