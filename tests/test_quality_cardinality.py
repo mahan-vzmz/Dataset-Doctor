@@ -32,7 +32,7 @@ def test_variant_labels_warn(tmp_path: Path) -> None:
         severity=Severity.WARNING,
     )
     assert "inconsistent category labels" in finding.description
-    assert "collapse to 1" in finding.description or "collapse to" in finding.description
+    assert "collapse to" in finding.description
 
 
 def test_clean_categories_stay_silent(tmp_path: Path) -> None:

@@ -28,7 +28,7 @@ def test_json_round_trip(write_file: Callable[[str, str | bytes], Path]) -> None
 
     assert payload["tool"] == "dataset-doctor"
     assert payload["version"]
-    assert payload["health_score"]["score"] == payload["health_score"]["score"]  # stable key
+    assert payload["health_score"]["score"] == report.health_score.score
     assert isinstance(payload["health_score"]["score"], int)
     assert payload["dataset"]["row_count"] == 3
     assert {f["severity"] for f in payload["findings"]} <= {"critical", "warning", "notice"}

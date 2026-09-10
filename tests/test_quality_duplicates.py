@@ -55,10 +55,11 @@ def test_duplicates_below_threshold_silent(tmp_path: Path) -> None:
 def test_absolute_row_threshold_catches_large_files(tmp_path: Path) -> None:
     from dataset_doctor.models.thresholds import Thresholds
 
-    # 500 duplicates = 1% exactly... use lower pct threshold to isolate the
-    # absolute-count branch: pct below warning but count above min_rows.
-    thresholds = Thresholds(duplicate_warning_pct=50.0, duplicate_warning_min_rows=100)
-    df = pl.DataFrame({"a": [1] * 600 + list(range(400))})  # 50% dupes, 600 redundant
+    # 600 redundant rows among 1000 total = 60% duplicates.
+    # Set pct threshold above 60% to isolate the absolute-count branch:
+    # pct (60%) below warning (70%) but count (600) above min_rows (100).
+    thresholds = Thresholds(duplicate_warning_pct=70.0, duplicate_warning_min_rows=100)
+    df = pl.DataFrame({"a": [1] * 600 + list(range(400))})  # 60% dupes, 600 redundant
     findings = run(make_context(df, tmp_path, thresholds=thresholds))
     assert any(f.category is FindingCategory.DUPLICATES for f in findings)
 

@@ -75,7 +75,10 @@ def test_all_categories_saturated_reaches_zero() -> None:
             _finding(Severity.CRITICAL, FindingCategory.MISSINGNESS, column=f"m{i}")
             for i in range(4)
         ],
-        *[_finding(Severity.CRITICAL, FindingCategory.DUPLICATES)],
+        *[
+            _finding(Severity.CRITICAL, FindingCategory.DUPLICATES, column=f"dup{i}")
+            for i in range(2)
+        ],
         *[
             _finding(Severity.CRITICAL, FindingCategory.DISTRIBUTION, column=f"d{i}")
             for i in range(2)
@@ -84,10 +87,11 @@ def test_all_categories_saturated_reaches_zero() -> None:
         _finding(Severity.CRITICAL, FindingCategory.CARDINALITY),
     ]
     score = compute_health_score(findings, Thresholds())
-    # 40->35, 10->15? no: duplicates raw 10 cap 15 => 10; distribution 20/20;
-    # schema 20/20; cardinality 10/10. Total = 35+10+20+20+10 = 95.
-    assert score.score == 5
-    assert score.total_deduction == 95
+    # missingness: 40 raw -> cap 35; duplicates: 20 raw -> cap 15;
+    # distribution: 20 raw -> cap 20; schema: 20 raw -> cap 20;
+    # cardinality: 10 raw -> cap 10. Total = 35+15+20+20+10 = 100.
+    assert score.score == 0
+    assert score.total_deduction == 100
 
 
 def test_floor_at_zero_is_possible_with_custom_caps() -> None:

@@ -136,7 +136,7 @@ def test_bad_config_exit_2(
 
 
 def test_good_config_changes_result(write_file: Callable[[str, str | bytes], Path]) -> None:
-    # 25% missing column: warning under defaults, silent when threshold raised.
+    # 25% missing column: warning under defaults, downgraded to notice when threshold raised.
     rows = "\n".join([""] * 25 + ["1"] * 75)
     data = write_file("partial.csv", f"c\n{rows}\n")
     config = write_file("relaxed.toml", "missing_warning_pct = 30.0\n")

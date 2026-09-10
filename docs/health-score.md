@@ -20,13 +20,13 @@ Severity points per finding (defaults):
 
 Category caps (maximum deduction, defaults):
 
-| Category                | Cap |
-|-------------------------|-----|
-| missingness             | 35  |
-| duplicates              | 15  |
-| distribution            | 20  |
-| schema & types          | 20  |
-| cardinality & constants | 10  |
+| Category                | TOML key         | Cap |
+|-------------------------|------------------|-----|
+| missingness             | `missingness`    | 35  |
+| duplicates              | `duplicates`     | 15  |
+| distribution            | `distribution`   | 20  |
+| schema & types          | `schema_issues`  | 20  |
+| cardinality & constants | `cardinality`    | 10  |
 
 ## Computation
 
@@ -86,4 +86,5 @@ Detection thresholds (separate from scoring) also live in `Thresholds`
   0.5% and 25% of non-null values are outside
 - skewness: warning at |skew| ≥ 1.0, notice at ≥ 0.5 (sample skewness)
 - zero inflation: notice at ≥ 80% exact zeros
-- mixed-type text columns: critical ≥ 60% parseable-but-text, notice at 100%
+- mixed-type text columns: critical ≥ 60% parseable-but-text, warning ≥ 30%,
+  notice when 100% of values parse (fully typed but stored as text)

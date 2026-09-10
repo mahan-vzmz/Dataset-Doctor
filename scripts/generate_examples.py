@@ -9,7 +9,7 @@ Usage:
 from __future__ import annotations
 
 import sys
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from random import Random
 
@@ -34,7 +34,9 @@ def healthy_customers(rng: Random) -> pl.DataFrame:
             "city": [CITIES[i % len(CITIES)] for i in range(n)],
             "signup_date": [date(2022, 1, 1) + timedelta(days=i % 900) for i in range(n)],
             "is_active": [bool(i % 3) for i in range(n)],
-            "monthly_spend": [round(abs(rng.gauss(50, 15)), 2) for _ in range(n)],
+            "monthly_spend": [
+                round(min(max(abs(rng.gauss(50, 15)), 15), 85), 2) for _ in range(n)
+            ],
         }
     )
 
@@ -70,7 +72,7 @@ def messy_sales(rng: Random) -> pl.DataFrame:
         )
     frame = pl.DataFrame(rows)
     # Exact duplicate rows -> duplicate detection.
-    frame = pl.concat([frame, frame[3], frame[7], frame[7]])
+    frame = pl.concat([frame, frame.slice(3, 1), frame.slice(7, 1), frame.slice(7, 1)])
     return frame
 
 
@@ -89,10 +91,13 @@ def sensor_readings(rng: Random) -> pl.DataFrame:
             "error_count": [
                 0 if rng.random() < 0.85 else int(rng.randrange(1, 5)) for _ in range(n)
             ],
-            "reading_ts": [(date(2025, 1, 1) + timedelta(minutes=i)).isoformat() for i in range(n)],
+            "reading_ts": [
+                (datetime(2025, 1, 1) + timedelta(minutes=i)).isoformat()
+                for i in range(n)
+            ],
         }
     )
-    return pl.concat([frame, frame[11]])
+    return pl.concat([frame, frame.slice(11, 1)])
 
 
 def main() -> None:

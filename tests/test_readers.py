@@ -109,7 +109,7 @@ def test_single_column_dataset(write_file: Callable[[str, str | bytes], Path]) -
     assert loaded.df.height == 3
 
 
-def test_detect_format_case_insensitive(tmp_path: Path) -> None:
+def test_detect_format_case_insensitive() -> None:
     assert detect_format(Path("X.CSV")) == "csv"
     assert detect_format(Path("x.Parquet")) == "parquet"
     assert detect_format(Path("x.NDJSON")) == "jsonl"

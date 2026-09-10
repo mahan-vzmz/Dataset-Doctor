@@ -48,7 +48,7 @@ customer_id,name,email,age,city,signup_date,is_active,monthly_spend
 1046,Alex 46,user46@example.com,32,Paris,2022-02-16,true,46.87
 1047,Jamie 47,user47@example.com,48,Madrid,2022-02-17,true,45.24
 1048,Alex 48,user48@example.com,52,Vienna,2022-02-18,false,47.73
-1049,Casey 49,user49@example.com,37,Warsaw,2022-02-19,true,9.99
+1049,Casey 49,user49@example.com,37,Warsaw,2022-02-19,true,15.0
 1050,Robin 50,user50@example.com,40,Berlin,2022-02-20,true,65.46
 1051,Casey 51,user51@example.com,35,Paris,2022-02-21,false,60.05
 1052,Robin 52,user52@example.com,36,Madrid,2022-02-22,true,38.25
@@ -76,7 +76,7 @@ customer_id,name,email,age,city,signup_date,is_active,monthly_spend
 1074,Casey 74,user74@example.com,48,Warsaw,2022-03-16,true,37.3
 1075,Sam 75,user75@example.com,40,Berlin,2022-03-17,false,47.83
 1076,Sam 76,user76@example.com,31,Paris,2022-03-18,true,57.97
-1077,Jamie 77,user77@example.com,40,Madrid,2022-03-19,true,92.54
+1077,Jamie 77,user77@example.com,40,Madrid,2022-03-19,true,85.0
 1078,Jamie 78,user78@example.com,29,Vienna,2022-03-20,false,59.55
 1079,Robin 79,user79@example.com,52,Warsaw,2022-03-21,true,53.42
 1080,Casey 80,user80@example.com,35,Berlin,2022-03-22,true,74.12
@@ -169,12 +169,12 @@ customer_id,name,email,age,city,signup_date,is_active,monthly_spend
 1167,Jamie 47,user167@example.com,40,Madrid,2022-06-17,true,39.44
 1168,Alex 48,user168@example.com,38,Vienna,2022-06-18,false,57.74
 1169,Casey 49,user169@example.com,35,Warsaw,2022-06-19,true,68.92
-1170,Sam 50,user170@example.com,47,Berlin,2022-06-20,true,12.27
+1170,Sam 50,user170@example.com,47,Berlin,2022-06-20,true,15.0
 1171,Sam 51,user171@example.com,22,Paris,2022-06-21,false,49.68
 1172,Jamie 52,user172@example.com,45,Madrid,2022-06-22,true,23.93
 1173,Casey 53,user173@example.com,43,Vienna,2022-06-23,true,58.38
 1174,Sam 54,user174@example.com,32,Warsaw,2022-06-24,false,72.25
-1175,Robin 55,user175@example.com,37,Berlin,2022-06-25,true,13.63
+1175,Robin 55,user175@example.com,37,Berlin,2022-06-25,true,15.0
 1176,Casey 56,user176@example.com,30,Paris,2022-06-26,true,68.66
 1177,Casey 57,user177@example.com,33,Madrid,2022-06-27,false,60.93
 1178,Jamie 58,user178@example.com,41,Vienna,2022-06-28,true,72.82
@@ -224,7 +224,7 @@ customer_id,name,email,age,city,signup_date,is_active,monthly_spend
 1222,Alex 102,user222@example.com,34,Madrid,2022-08-11,false,36.06
 1223,Jamie 103,user223@example.com,43,Vienna,2022-08-12,true,71.44
 1224,Robin 104,user224@example.com,31,Warsaw,2022-08-13,true,74.69
-1225,Jamie 105,user225@example.com,37,Berlin,2022-08-14,false,114.72
+1225,Jamie 105,user225@example.com,37,Berlin,2022-08-14,false,85.0
 1226,Jamie 106,user226@example.com,26,Paris,2022-08-15,true,57.06
 1227,Jamie 107,user227@example.com,30,Madrid,2022-08-16,true,60.39
 1228,Alex 108,user228@example.com,38,Vienna,2022-08-17,false,54.24
@@ -352,7 +352,7 @@ customer_id,name,email,age,city,signup_date,is_active,monthly_spend
 1350,Casey 110,user350@example.com,38,Berlin,2022-12-17,true,32.37
 1351,Sam 111,user351@example.com,51,Paris,2022-12-18,false,27.92
 1352,Robin 112,user352@example.com,37,Madrid,2022-12-19,true,33.17
-1353,Robin 113,user353@example.com,41,Vienna,2022-12-20,true,11.32
+1353,Robin 113,user353@example.com,41,Vienna,2022-12-20,true,15.0
 1354,Casey 114,user354@example.com,34,Warsaw,2022-12-21,false,40.57
 1355,Sam 115,user355@example.com,50,Berlin,2022-12-22,true,51.28
 1356,Robin 116,user356@example.com,22,Paris,2022-12-23,true,65.76
@@ -387,7 +387,7 @@ customer_id,name,email,age,city,signup_date,is_active,monthly_spend
 1385,Sam 25,user385@example.com,35,Berlin,2023-01-21,true,38.7
 1386,Jamie 26,user386@example.com,36,Paris,2023-01-22,true,63.69
 1387,Sam 27,user387@example.com,31,Madrid,2023-01-23,false,57.82
-1388,Alex 28,user388@example.com,34,Vienna,2023-01-24,true,5.66
+1388,Alex 28,user388@example.com,34,Vienna,2023-01-24,true,15.0
 1389,Robin 29,user389@example.com,37,Warsaw,2023-01-25,true,70.66
 1390,Robin 30,user390@example.com,34,Berlin,2023-01-26,false,55.29
 1391,Alex 31,user391@example.com,33,Paris,2023-01-27,true,61.34
@@ -430,7 +430,7 @@ customer_id,name,email,age,city,signup_date,is_active,monthly_spend
 1428,Alex 68,user428@example.com,39,Vienna,2023-03-05,true,41.26
 1429,Robin 69,user429@example.com,53,Warsaw,2023-03-06,false,59.67
 1430,Robin 70,user430@example.com,41,Berlin,2023-03-07,true,43.16
-1431,Casey 71,user431@example.com,27,Paris,2023-03-08,true,87.52
+1431,Casey 71,user431@example.com,27,Paris,2023-03-08,true,85.0
 1432,Jamie 72,user432@example.com,42,Madrid,2023-03-09,false,59.5
 1433,Casey 73,user433@example.com,42,Vienna,2023-03-10,true,51.56
 1434,Robin 74,user434@example.com,38,Warsaw,2023-03-11,true,17.02
@@ -449,7 +449,7 @@ customer_id,name,email,age,city,signup_date,is_active,monthly_spend
 1447,Jamie 87,user447@example.com,47,Madrid,2023-03-24,false,70.97
 1448,Casey 88,user448@example.com,39,Vienna,2023-03-25,true,77.36
 1449,Casey 89,user449@example.com,44,Warsaw,2023-03-26,true,49.53
-1450,Alex 90,user450@example.com,56,Berlin,2023-03-27,false,93.13
+1450,Alex 90,user450@example.com,56,Berlin,2023-03-27,false,85.0
 1451,Jamie 91,user451@example.com,30,Paris,2023-03-28,true,41.09
 1452,Casey 92,user452@example.com,46,Madrid,2023-03-29,true,38.36
 1453,Sam 93,user453@example.com,38,Vienna,2023-03-30,false,29.49
@@ -462,7 +462,7 @@ customer_id,name,email,age,city,signup_date,is_active,monthly_spend
 1460,Sam 100,user460@example.com,34,Berlin,2023-04-06,true,56.52
 1461,Robin 101,user461@example.com,29,Paris,2023-04-07,true,62.62
 1462,Jamie 102,user462@example.com,27,Madrid,2023-04-08,false,57.01
-1463,Alex 103,user463@example.com,49,Vienna,2023-04-09,true,92.95
+1463,Alex 103,user463@example.com,49,Vienna,2023-04-09,true,85.0
 1464,Robin 104,user464@example.com,36,Warsaw,2023-04-10,true,52.88
 1465,Casey 105,user465@example.com,38,Berlin,2023-04-11,false,39.36
 1466,Robin 106,user466@example.com,35,Paris,2023-04-12,true,35.82
@@ -498,7 +498,7 @@ customer_id,name,email,age,city,signup_date,is_active,monthly_spend
 1496,Jamie 16,user496@example.com,36,Paris,2023-05-12,true,68.41
 1497,Sam 17,user497@example.com,30,Madrid,2023-05-13,true,79.82
 1498,Casey 18,user498@example.com,29,Vienna,2023-05-14,false,55.59
-1499,Jamie 19,user499@example.com,33,Warsaw,2023-05-15,true,85.98
+1499,Jamie 19,user499@example.com,33,Warsaw,2023-05-15,true,85.0
 1500,Sam 20,user500@example.com,48,Berlin,2023-05-16,true,37.82
 1501,Alex 21,user501@example.com,32,Paris,2023-05-17,false,48.55
 1502,Robin 22,user502@example.com,45,Madrid,2023-05-18,true,58.72
@@ -542,7 +542,7 @@ customer_id,name,email,age,city,signup_date,is_active,monthly_spend
 1540,Jamie 60,user20@example.com,26,Berlin,2023-06-25,false,68.48
 1541,Casey 61,user21@example.com,36,Paris,2023-06-26,true,73.41
 1542,Casey 62,user22@example.com,52,Madrid,2023-06-27,true,31.17
-1543,Casey 63,user23@example.com,50,Vienna,2023-06-28,false,90.46
+1543,Casey 63,user23@example.com,50,Vienna,2023-06-28,false,85.0
 1544,Robin 64,user24@example.com,45,Warsaw,2023-06-29,true,41.47
 1545,Jamie 65,user25@example.com,45,Berlin,2023-06-30,true,62.49
 1546,Casey 66,user26@example.com,42,Paris,2023-07-01,false,51.21

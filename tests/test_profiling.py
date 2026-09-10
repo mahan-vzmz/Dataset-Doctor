@@ -13,7 +13,7 @@ from dataset_doctor.profiling.dataset_stats import profile_dataset
 from tests.conftest import make_loaded
 
 
-def test_numeric_stats_are_exact(tmp_path: Path) -> None:
+def test_numeric_stats_are_exact() -> None:
     df = pl.DataFrame({"x": [1, 2, 3, 4, 5]})
     column = profile_column(df, "x", top_k=3)
 

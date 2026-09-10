@@ -45,7 +45,7 @@ def test_clean_gaussian_has_no_outlier_warning(tmp_path: Path) -> None:
 
 def test_outliers_respect_configurable_bounds(tmp_path: Path) -> None:
     values = [float(i) for i in range(1, 101)] + [1000.0]
-    df = pl.DataFrame({"x": values})  # 1/103 < default min pct 0.5? -> 0.97% ok.
+    df = pl.DataFrame({"x": values})  # 1/101 ≈ 0.99%, above default min pct 0.5%.
     strict = Thresholds(outlier_min_pct=2.0)
     findings = [
         f
