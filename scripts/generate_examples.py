@@ -34,9 +34,7 @@ def healthy_customers(rng: Random) -> pl.DataFrame:
             "city": [CITIES[i % len(CITIES)] for i in range(n)],
             "signup_date": [date(2022, 1, 1) + timedelta(days=i % 900) for i in range(n)],
             "is_active": [bool(i % 3) for i in range(n)],
-            "monthly_spend": [
-                round(min(max(abs(rng.gauss(50, 15)), 15), 85), 2) for _ in range(n)
-            ],
+            "monthly_spend": [round(min(max(abs(rng.gauss(50, 15)), 15), 85), 2) for _ in range(n)],
         }
     )
 
@@ -92,8 +90,7 @@ def sensor_readings(rng: Random) -> pl.DataFrame:
                 0 if rng.random() < 0.85 else int(rng.randrange(1, 5)) for _ in range(n)
             ],
             "reading_ts": [
-                (datetime(2025, 1, 1) + timedelta(minutes=i)).isoformat()
-                for i in range(n)
+                (datetime(2025, 1, 1) + timedelta(minutes=i)).isoformat() for i in range(n)
             ],
         }
     )
