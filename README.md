@@ -60,7 +60,8 @@ uv tool install dataset-doctor        # as a CLI tool (once published)
 Or from a checkout of this repository:
 
 ```bash
-git clone <repo-url> && cd dataset-doctor
+git clone https://github.com/mahan-vzmz/Dataset-Doctor.git
+cd Dataset-Doctor
 uv sync                               # creates .venv and installs everything
 uv run dataset-doctor --help
 ```
